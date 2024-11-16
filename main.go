@@ -7,7 +7,7 @@ func main() {
 }
 
 func isWhitespace(r rune) bool {
-	return r == ' '
+	return r == ' ' || r == '\t'
 }
 
 func isDiffMarker(r rune) bool {
