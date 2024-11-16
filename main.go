@@ -15,15 +15,16 @@ func isDiffMarker(r rune) bool {
 }
 
 func unindentDiffMarker(line string) string {
-	for i, r := range line {
-		if isWhiteSpace(r) {
-			continue
+	var i int
+	var r rune
+	// Skip leading whitespaces
+	for i, r = range line {
+		if !isWhiteSpace(r) {
+			break
 		}
-		if isDiffMarker(r) {
-			return fmt.Sprintf("%c%s%s", r, line[:i], line[i+1:])
-		} else {
-			return line
-		}
+	}
+	if isDiffMarker(r) {
+		return fmt.Sprintf("%c%s%s", r, line[:i], line[i+1:])
 	}
 	return line
 }
