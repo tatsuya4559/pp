@@ -13,6 +13,14 @@ func Test差分を表す文字が行頭に移動されること(t *testing.T) {
 			input: "    + foo",
 			want:  "+     foo",
 		},
+		"削除マーカーが行頭に移動されること": {
+			input: "    - foo",
+			want:  "-     foo",
+		},
+		"変更マーカーが行頭に移動されること": {
+			input: "    ~ foo",
+			want:  "~     foo",
+		},
 	}
 
 	for summary, tt := range tests {
