@@ -11,7 +11,7 @@ func isWhitespace(r rune) bool {
 }
 
 func isDiffMarker(r rune) bool {
-	return r == '+'
+	return r == '+' || r == '-' || r == '~'
 }
 
 func unindentDiffMarker(line string) string {
