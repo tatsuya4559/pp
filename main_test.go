@@ -26,6 +26,14 @@ func Test差分を表す文字が行頭に移動されること(t *testing.T) {
 			input: "\t+ foo",
 			want:  "+\t foo",
 		},
+		"空行は変更されないこと": {
+			input: "",
+			want:  "",
+		},
+		"差分マーカーで開始しない行は変更されないこと": {
+			input: "    foo",
+			want:  "    foo",
+		},
 	}
 
 	for summary, tt := range tests {
