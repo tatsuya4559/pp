@@ -4,6 +4,7 @@ import (
 	"testing"
 )
 
+// Test_Diff_marker_is_moved_to_the_beginning_of_the_line
 func Test差分を表す文字が行頭に移動されること(t *testing.T) {
 	tests := map[string]struct {
 		input string
