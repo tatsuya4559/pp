@@ -6,7 +6,7 @@ func main() {
 
 }
 
-func isWhiteSpace(r rune) bool {
+func isWhitespace(r rune) bool {
 	return r == ' '
 }
 
@@ -19,7 +19,7 @@ func unindentDiffMarker(line string) string {
 	var r rune
 	// Skip leading whitespaces
 	for i, r = range line {
-		if !isWhiteSpace(r) {
+		if !isWhitespace(r) {
 			break
 		}
 	}
