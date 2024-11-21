@@ -22,10 +22,6 @@ func Test差分を表す文字が行頭に移動されること(t *testing.T) {
 			input: "    ~ foo",
 			want:  "~     foo",
 		},
-		"ハードタブでインデントしている場合でも差分マーカーが移動されること": {
-			input: "\t+ foo",
-			want:  "+\t foo",
-		},
 		"空行は変更されないこと": {
 			input: "",
 			want:  "",

@@ -5,6 +5,7 @@ import (
 	"flag"
 	"fmt"
 	"os"
+	"unicode"
 )
 
 func printUsage() {
@@ -26,10 +27,6 @@ func main() {
 	}
 }
 
-func isWhitespace(r rune) bool {
-	return r == ' ' || r == '\t'
-}
-
 func isDiffMarker(r rune) bool {
 	return r == '+' || r == '-' || r == '~'
 }
@@ -39,7 +36,7 @@ func unindentDiffMarker(line string) string {
 	var r rune
 	// Skip leading whitespaces
 	for i, r = range line {
-		if !isWhitespace(r) {
+		if !unicode.IsSpace(r) {
 			break
 		}
 	}
